@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RDJ Distributions — Wholesale Snacks &amp; Candy · San Diego County</title>
+<meta name="description" content="Locally owned wholesale snack, candy and beverage distribution in Spring Valley, CA. Snak Club, Tajín, Muncheros, Antiox-C and Tillamook Country Smoker — by the case, delivered across San Diego County." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241a16;
+    --ink-soft:#4f433d;
+    --paper:#f7f4ee;
+    --paper-2:#efe9df;
+    --card:#fffdf9;
+    --line:#e3dacd;
+    --chili:#e5402b;
+    --chili-deep:#b62f1f;
+    --lime:#5f8f12;
+    --amber:#f2a81d;
+    --maroon:#7a1538;
+    --slate:#3c4a52;
+    --ok:#2e7d32;
+    --shadow:0 1px 2px rgba(36,26,22,.06), 0 8px 28px -12px rgba(36,26,22,.22);
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:"Bricolage Grotesque","Inter",sans-serif;letter-spacing:-.02em;line-height:1.02;font-weight:800}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .tnum{font-variant-numeric:tabular-nums}
+  button{font-family:inherit;cursor:pointer}
+  :focus-visible{outline:3px solid var(--chili);outline-offset:2px;border-radius:6px}
+
+  /* ---------- Header ---------- */
+  header.site{position:sticky;top:0;z-index:40;background:rgba(247,244,238,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .navbar{display:flex;align-items:center;gap:18px;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:0 0 auto}
+  .brand .mark{width:38px;height:38px;border-radius:9px;background:var(--ink);display:grid;place-items:center;flex:0 0 auto;box-shadow:inset 0 0 0 2px rgba(255,255,255,.06)}
+  .brand .mark span{font-family:"Bricolage Grotesque";font-weight:800;color:var(--paper);font-size:18px;letter-spacing:-.04em}
+  .brand .mark span b{color:var(--amber)}
+  .brand .name{font-family:"Bricolage Grotesque";font-weight:800;font-size:19px;letter-spacing:-.03em;line-height:1}
+  .brand .name small{display:block;font-family:"Inter";font-weight:600;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+  .nav-links{display:flex;gap:6px;margin-left:8px}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:14.5px;color:var(--ink-soft);padding:8px 11px;border-radius:9px}
+  .nav-links a:hover{color:var(--ink);background:var(--paper-2)}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+  .phone-pill{display:flex;align-items:center;gap:7px;text-decoration:none;font-weight:700;font-size:14px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+  .phone-pill svg{width:15px;height:15px}
+  .cart-btn{position:relative;display:flex;align-items:center;gap:8px;border:none;background:var(--ink);color:var(--paper);font-weight:700;font-size:14px;padding:10px 15px 10px 13px;border-radius:999px}
+  .cart-btn svg{width:18px;height:18px}
+  .cart-btn .count{position:absolute;top:-6px;right:-6px;min-width:21px;height:21px;padding:0 5px;border-radius:999px;background:var(--chili);color:#fff;font-size:11.5px;font-weight:700;display:grid;place-items:center;border:2px solid var(--paper);transform:scale(0);transition:transform .18s cubic-bezier(.2,1.4,.5,1)}
+  .cart-btn .count.show{transform:scale(1)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:60px 0 56px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--chili-deep);background:#fbeae5;border:1px solid #f3cabf;padding:7px 13px;border-radius:999px}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--chili);box-shadow:0 0 0 4px rgba(229,64,43,.18)}
+  h1.hero-title{font-size:clamp(38px,5.4vw,62px);margin:20px 0 0}
+  h1.hero-title .hl{color:var(--chili);position:relative;white-space:nowrap}
+  .hero-sub{font-size:18px;color:var(--ink-soft);max-width:33ch;margin:18px 0 0}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15.5px;border-radius:11px;padding:13px 20px;text-decoration:none;border:1px solid transparent;transition:transform .12s ease, box-shadow .12s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--chili);color:#fff;box-shadow:0 8px 20px -8px rgba(229,64,43,.6)}
+  .btn-primary:hover{background:var(--chili-deep)}
+  .btn-ghost{background:var(--card);border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+  .trust .t{display:flex;flex-direction:column;gap:2px}
+  .trust .t b{font-family:"Bricolage Grotesque";font-size:21px;font-weight:800}
+  .trust .t span{font-size:12.5px;color:var(--ink-soft);font-weight:500}
+
+  /* stacked-cases signature visual */
+  .hero-art{position:relative;height:380px}
+  .hero-art svg{width:100%;height:100%;overflow:visible}
+  .hero-art .glow{position:absolute;inset:auto 0 6% 0;height:60%;background:radial-gradient(60% 80% at 60% 60%, rgba(242,168,29,.22), transparent 70%);filter:blur(8px);z-index:-1}
+
+  /* ---------- Format scale ---------- */
+  .formats{background:var(--ink);color:var(--paper)}
+  .formats .wrap{padding:30px 22px 34px}
+  .formats h2{font-size:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#cdbfae;margin:0 0 18px}
+  .fmt-row{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .fmt{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:15px 14px}
+  .fmt .sz{font-family:"Bricolage Grotesque";font-weight:800;font-size:15px;color:var(--amber)}
+  .fmt .nm{font-weight:700;font-size:14px;margin:6px 0 3px}
+  .fmt .oz{font-size:12px;color:#bcae9d}
+
+  /* ---------- Catalog ---------- */
+  .catalog{padding:50px 0 70px}
+  .cat-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+  .cat-head h2{font-size:clamp(26px,3.4vw,34px);margin:0}
+  .cat-head p{margin:8px 0 0;color:var(--ink-soft);max-width:48ch}
+  .pricing-note{font-size:12.5px;color:var(--ink-soft);background:#fdf6e6;border:1px solid #f0dca6;border-radius:10px;padding:9px 13px;display:flex;gap:8px;align-items:center;margin-top:6px}
+  .pricing-note svg{width:16px;height:16px;flex:0 0 auto;color:var(--amber)}
+
+  .controls{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:26px 0 8px;position:sticky;top:66px;z-index:20;background:linear-gradient(var(--paper) 72%,rgba(247,244,238,0));padding:12px 0}
+  .search{position:relative;flex:1 1 260px;max-width:360px}
+  .search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--ink-soft)}
+  .search input{width:100%;border:1px solid var(--line);background:var(--card);border-radius:11px;padding:11px 13px 11px 38px;font-size:15px;font-family:inherit;color:var(--ink)}
+  .search input::placeholder{color:#9b8e80}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--ink-soft);font-weight:600;font-size:13.5px;padding:8px 13px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:all .12s ease}
+  .chip:hover{border-color:var(--ink)}
+  .chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .chip .cglyph{font-size:14px;line-height:1}
+
+  .count-line{font-size:13px;color:var(--ink-soft);margin:4px 0 18px;font-weight:500}
+
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .14s ease, box-shadow .14s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(36,26,22,.07),0 18px 40px -18px rgba(36,26,22,.3)}
+  .tile{height:118px;position:relative;display:flex;align-items:flex-end;justify-content:space-between;padding:12px 14px;color:#fff}
+  .tile .glyph{font-size:40px;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}
+  .tile .brandtag{font-size:11px;font-weight:700;letter-spacing:.04em;background:rgba(0,0,0,.28);padding:4px 9px;border-radius:999px;backdrop-filter:blur(2px)}
+  .tile .fmt-badge{position:absolute;top:11px;left:12px;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(255,255,255,.92);color:var(--ink);padding:4px 8px;border-radius:6px}
+  .card-body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+  .card-body .pname{font-weight:700;font-size:15.5px;line-height:1.2;min-height:38px}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:12px;color:var(--ink-soft)}
+  .meta .m{display:inline-flex;align-items:center;gap:4px}
+  .meta .sku{font-variant-numeric:tabular-nums}
+  .price-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+  .price-row .case{font-family:"Bricolage Grotesque";font-weight:800;font-size:21px}
+  .price-row .case small{font-weight:600;font-size:12px;color:var(--ink-soft);font-family:"Inter"}
+  .price-row .srp{font-size:12px;color:var(--ink-soft);text-align:right}
+  .price-row .srp b{color:var(--ink);font-weight:700}
+  .add-row{display:flex;gap:9px;margin-top:13px;align-items:stretch}
+  .stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex:0 0 auto}
+  .stepper button{width:34px;border:none;background:var(--card);font-size:18px;color:var(--ink);font-weight:600}
+  .stepper button:hover{background:var(--paper-2)}
+  .stepper input{width:38px;text-align:center;border:none;font-size:14.5px;font-weight:700;font-family:inherit;color:var(--ink);background:transparent;-moz-appearance:textfield}
+  .stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .add-btn{flex:1;border:none;background:var(--ink);color:var(--paper);font-weight:700;font-size:14px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .12s}
+  .add-btn:hover{background:#000}
+  .add-btn.added{background:var(--lime)}
+  .add-btn svg{width:15px;height:15px}
+  .empty-state{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--ink-soft)}
+  .empty-state b{display:block;font-family:"Bricolage Grotesque";font-size:20px;color:var(--ink);margin-bottom:6px}
+
+  /* ---------- How it works ---------- */
+  .how{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .how .wrap{padding:54px 22px}
+  .how h2{font-size:clamp(24px,3vw,30px);margin:0 0 6px}
+  .how .lead{color:var(--ink-soft);max-width:54ch;margin:0 0 30px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .step .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:14px;color:#fff;background:var(--chili);width:30px;height:30px;border-radius:8px;display:grid;place-items:center;margin-bottom:13px}
+  .step h3{font-size:16.5px;margin:0 0 6px}
+  .step p{font-size:13.5px;color:var(--ink-soft);margin:0}
+
+  /* ---------- Footer ---------- */
+  footer.site{background:var(--ink);color:var(--paper)}
+  footer .wrap{padding:52px 22px 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+  footer .brand .name{color:var(--paper)}
+  footer .brand .name small{color:#bcae9d}
+  .foot-about{color:#cdbfae;font-size:14px;max-width:40ch;margin:16px 0 0}
+  .foot-h{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#bcae9d;font-weight:700;margin:0 0 14px}
+  .foot-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;font-size:14px}
+  .foot-list a{text-decoration:none;color:var(--paper);display:flex;gap:9px;align-items:flex-start}
+  .foot-list a:hover{color:var(--amber)}
+  .foot-list svg{width:16px;height:16px;flex:0 0 auto;margin-top:2px;color:var(--amber)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:38px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#9c8f7f}
+
+  /* ---------- Cart drawer ---------- */
+  .scrim{position:fixed;inset:0;background:rgba(20,12,8,.45);opacity:0;visibility:hidden;transition:opacity .22s ease;z-index:50}
+  .scrim.open{opacity:1;visibility:visible}
+  .drawer{position:fixed;top:0;right:0;height:100dvh;width:min(440px,100%);background:var(--paper);z-index:60;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.1,1);box-shadow:-20px 0 50px -20px rgba(0,0,0,.4)}
+  .drawer.open{transform:none}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+  .drawer-head h3{font-size:20px;margin:0}
+  .icon-btn{border:none;background:transparent;width:36px;height:36px;border-radius:9px;display:grid;place-items:center;color:var(--ink)}
+  .icon-btn:hover{background:var(--paper-2)}
+  .icon-btn svg{width:20px;height:20px}
+  .drawer-body{flex:1;overflow-y:auto;padding:8px 22px}
+  .cart-empty{text-align:center;color:var(--ink-soft);padding:70px 16px}
+  .cart-empty svg{width:46px;height:46px;color:var(--line);margin-bottom:14px}
+  .cart-empty b{display:block;font-family:"Bricolage Grotesque";font-size:18px;color:var(--ink);margin-bottom:5px}
+  .line{display:flex;gap:13px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .line .lthumb{width:50px;height:50px;border-radius:10px;display:grid;place-items:center;font-size:24px;flex:0 0 auto;color:#fff}
+  .line .linfo{flex:1;min-width:0}
+  .line .lname{font-weight:700;font-size:14.5px;line-height:1.25}
+  .line .lsub{font-size:12px;color:var(--ink-soft);margin-top:3px}
+  .line .lbottom{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+  .line .stepper{transform:scale(.92);transform-origin:left}
+  .line .lprice{font-weight:800;font-family:"Bricolage Grotesque";font-size:16px}
+  .remove{border:none;background:transparent;color:var(--ink-soft);font-size:12px;font-weight:600;text-decoration:underline;padding:0;margin-top:6px}
+  .remove:hover{color:var(--chili)}
+
+  .min-bar{padding:14px 22px 0}
+  .min-track{height:8px;border-radius:999px;background:var(--paper-2);overflow:hidden;border:1px solid var(--line)}
+  .min-fill{height:100%;background:linear-gradient(90deg,var(--amber),var(--lime));width:0;transition:width .3s ease}
+  .min-msg{font-size:12.5px;margin-top:8px;color:var(--ink-soft);font-weight:500}
+  .min-msg b{color:var(--ink)}
+  .min-msg.met{color:var(--ok)}
+
+  .drawer-foot{border-top:1px solid var(--line);padding:18px 22px calc(18px + env(safe-area-inset-bottom));background:var(--card)}
+  .totals{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+  .totals .tl{font-weight:600;color:var(--ink-soft);font-size:14px}
+  .totals .tr{font-family:"Bricolage Grotesque";font-weight:800;font-size:26px}
+  .checkout-btn{width:100%;border:none;background:var(--chili);color:#fff;font-weight:700;font-size:16px;padding:15px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 10px 24px -10px rgba(229,64,43,.6)}
+  .checkout-btn:hover{background:var(--chili-deep)}
+  .checkout-btn:disabled{background:var(--line);color:#9b8e80;box-shadow:none;cursor:not-allowed}
+
+  /* checkout view inside drawer */
+  .co-field{margin-bottom:13px}
+  .co-field label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:5px}
+  .co-field input,.co-field textarea{width:100%;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:11px 12px;font-size:14.5px;font-family:inherit;color:var(--ink)}
+  .co-field textarea{resize:vertical;min-height:62px}
+  .co-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .back-link{border:none;background:transparent;color:var(--ink-soft);font-weight:600;font-size:13.5px;display:inline-flex;align-items:center;gap:6px;padding:0;margin-bottom:6px}
+  .back-link:hover{color:var(--ink)}
+  .back-link svg{width:14px;height:14px}
+  .pay-note{font-size:12px;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-top:4px}
+  .confirm{text-align:center;padding:40px 10px}
+  .confirm .ic{width:62px;height:62px;border-radius:50%;background:#e7f3e8;display:grid;place-items:center;margin:0 auto 16px}
+  .confirm .ic svg{width:32px;height:32px;color:var(--ok)}
+  .confirm h3{font-size:22px;margin:0 0 8px}
+  .confirm p{color:var(--ink-soft);font-size:14.5px;margin:0 auto;max-width:34ch}
+  .order-box{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:20px 0;font-size:13px;white-space:pre-wrap;font-variant-numeric:tabular-nums;max-height:200px;overflow:auto}
+
+  .toast{position:fixed;left:50%;bottom:26px;translate:-50% 20px;background:var(--ink);color:var(--paper);padding:13px 20px;border-radius:999px;font-weight:600;font-size:14px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s ease, translate .2s ease;z-index:80;display:flex;align-items:center;gap:9px}
+  .toast.show{opacity:1;translate:-50% 0}
+  .toast svg{width:17px;height:17px;color:var(--lime)}
+
+  @media (max-width:1000px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+    .fmt-row{grid-template-columns:repeat(3,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;padding:42px 0 40px}
+    .hero-art{display:none}
+    .nav-links,.phone-pill{display:none}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+  }
+  @media (max-width:640px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .card-body .pname{min-height:0}
+    .trust{gap:16px}
+    .controls{top:66px}
+  }
+  @media (max-width:460px){
+    .grid{grid-template-columns:1fr 1fr;gap:12px}
+    .tile{height:96px}
+    .tile .glyph{font-size:32px}
+    .fmt-row{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr}
+    .co-row{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap navbar">
+    <a class="brand" href="#top" aria-label="RDJ Distributions home">
+      <span class="mark"><span>R<b>D</b>J</span></span>
+      <span class="name">RDJ Distributions<small>Wholesale · San Diego County</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#catalog">Catalog</a>
+      <a href="#how">How ordering works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="phone-pill" href="tel:+16196701086">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        (619) 670-1086
+      </a>
+      <button class="cart-btn" id="openCart" aria-label="Open order">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Order
+        <span class="count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span>Locally owned · Spring Valley, CA</span>
+      <h1 class="hero-title">Wholesale snacks, <span class="hl">by the case.</span> Delivered across San Diego County.</h1>
+      <p class="hero-sub">Snak Club, Tajín, Muncheros, Antiox-C and Tillamook Country Smoker — stocked for markets, convenience stores, restaurants and offices.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#catalog">Browse the catalog
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#how">How ordering works</a>
+      </div>
+      <div class="trust">
+        <div class="t"><b>200+</b><span>SKUs in stock</span></div>
+        <div class="t"><b>5 brands</b><span>Snak&nbsp;Club · Tajín · more</span></div>
+        <div class="t"><b>Grab-N-Run → Party</b><span>Every pack size</span></div>
+        <div class="t"><b>By the case</b><span>Wholesale only</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="glow"></div>
+      <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="b1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e5402b"/><stop offset="1" stop-color="#b62f1f"/></linearGradient>
+          <linearGradient id="b2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2a81d"/><stop offset="1" stop-color="#d4880a"/></linearGradient>
+          <linearGradient id="b3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6f9f1a"/><stop offset="1" stop-color="#4f7510"/></linearGradient>
+          <linearGradient id="b4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2c25"/><stop offset="1" stop-color="#241a16"/></linearGradient>
+        </defs>
+        <!-- pallet -->
+        <g stroke="#241a16" stroke-width="2.5" stroke-linejoin="round">
+          <!-- back box -->
+          <g transform="translate(208,40)">
+            <path d="M0 26 L66 0 L132 26 L66 52 Z" fill="url(#b3)"/>
+            <path d="M0 26 L0 92 L66 118 L66 52 Z" fill="#4f7510"/>
+            <path d="M132 26 L132 92 L66 118 L66 52 Z" fill="#5f8f12"/>
+            <rect x="36" y="58" width="60" height="20" rx="3" transform="skewY(21.8)" fill="#fff" opacity=".9" stroke="none"/>
+          </g>
+          <!-- left tall box -->
+          <g transform="translate(40,96)">
+            <path d="M0 30 L78 0 L156 30 L78 60 Z" fill="url(#b2)"/>
+            <path d="M0 30 L0 138 L78 168 L78 60 Z" fill="#c8810b"/>
+            <path d="M156 30 L156 138 L78 168 L78 60 Z" fill="#f2a81d"/>
+            <rect x="44" y="64" width="70" height="26" rx="3" transform="skewY(21)" fill="#fff" opacity=".92" stroke="none"/>
+          </g>
+          <!-- front red box -->
+          <g transform="translate(150,150)">
+            <path d="M0 34 L92 0 L184 34 L92 68 Z" fill="url(#b1)"/>
+            <path d="M0 34 L0 150 L92 184 L92 68 Z" fill="#a82a1b"/>
+            <path d="M184 34 L184 150 L92 184 L92 68 Z" fill="#e5402b"/>
+            <rect x="48" y="74" width="86" height="30" rx="4" transform="skewY(20.5)" fill="#fff" opacity=".95" stroke="none"/>
+            <path d="M54 96 l78 -29" stroke="#e5402b" stroke-width="6" stroke-linecap="round" opacity=".0"/>
+          </g>
+          <!-- pallet base -->
+          <g transform="translate(118,300)">
+            <path d="M0 18 L100 -16 L228 30 L128 64 Z" fill="url(#b4)"/>
+            <path d="M0 18 L0 34 L128 80 L128 64 Z" fill="#1a120e"/>
+            <path d="M228 30 L228 46 L128 80 L128 64 Z" fill="#2e221b"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="formats">
+  <div class="wrap">
+    <h2>One line, every pack size</h2>
+    <div class="fmt-row" id="fmtRow"></div>
+  </div>
+</section>
+
+<main class="catalog" id="catalog">
+  <div class="wrap">
+    <div class="cat-head">
+      <div>
+        <h2>The catalog</h2>
+        <p>Real SKUs, sizes and case counts from the 2023 Century Snacks line. Add cases to build your wholesale order.</p>
+      </div>
+      <div class="pricing-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>Case prices shown are <b>estimates</b> — swap in your real wholesale rates in the code.</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" id="search" placeholder="Search products or SKU…" aria-label="Search products" />
+      </div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="count-line" id="countLine"></div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <h2>How wholesale ordering works</h2>
+    <p class="lead">RDJ supplies retailers, not single bags. Build your order by the case, send it over, and we confirm stock and delivery for San Diego County.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Browse by the case</h3><p>Filter the catalog by snack type or search a SKU. Every item ships in full cases.</p></div>
+      <div class="step"><div class="n">2</div><h3>Build your order</h3><p>Add cases to your order. A $250 minimum applies to keep delivery worthwhile.</p></div>
+      <div class="step"><div class="n">3</div><h3>Send it to RDJ</h3><p>Submit your order request with your business details. We confirm availability and pricing.</p></div>
+      <div class="step"><div class="n">4</div><h3>Get it delivered</h3><p>We schedule delivery or pickup at our Spring Valley facility and invoice your account.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="text-decoration:none">
+          <span class="mark"><span>R<b>D</b>J</span></span>
+          <span class="name">RDJ Distributions<small>Wholesale · San Diego County</small></span>
+        </a>
+        <p class="foot-about">A locally owned wholesale food, snack and beverage distributor serving markets, convenience stores and restaurants across the San Diego area.</p>
+      </div>
+      <div>
+        <p class="foot-h">Visit / Contact</p>
+        <ul class="foot-list">
+          <li><a href="https://maps.google.com/?q=2731+Via+Orange+Way+Suite+104+Spring+Valley+CA+91978" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>2731 Via Orange Way, Suite 104<br>Spring Valley, CA 91978</span></a></li>
+          <li><a href="tel:+16196701086">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+            <span>(619) 670-1086</span></a></li>
+          <li><a href="https://www.facebook.com/RDJDistributions/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+            <span>Facebook · @RDJDistributions</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h">Wholesale</p>
+        <ul class="foot-list">
+          <li><a href="#catalog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Browse catalog</span></a></li>
+          <li><a href="#how"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>How ordering works</span></a></li>
+          <li><a href="#" id="footOrder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Start an order</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> RDJ Distributions. Wholesale orders by the case.</span>
+      <span>Brands shown are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart / order drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your order" aria-modal="true" role="dialog">
+  <div class="drawer-head">
+    <h3 id="drawerTitle">Your order</h3>
+    <button class="icon-btn" id="closeCart" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="min-bar" id="minBar"></div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">Added</span></div>
+
+<script>
+/* ============================================================
+   RDJ DISTRIBUTIONS — storefront logic
+   ------------------------------------------------------------
+   EDIT PRICING HERE:
+   • Each product lists `srp` (suggested retail) + `pack` (units/case).
+   • Case price is estimated = pack × srp × WHOLESALE_FACTOR.
+     Set real per-case prices by adding `case: 00.00` to a product,
+     or change WHOLESALE_FACTOR below.
+   • Set your real order email in ORDER_EMAIL and minimum in MIN_ORDER.
+   ============================================================ */
+  const WHOLESALE_FACTOR = 0.55;      // ~ share of retail you charge wholesale
+  const MIN_ORDER = 250;              // minimum order in dollars
+  const ORDER_EMAIL = "orders@rdjdistributions.com"; // << replace with real inbox
+
+  const CATS = [
+    {id:"all",   name:"All",                glyph:"🧺", hue:"#3c4a52"},
+    {id:"trail", name:"Trail Mix",          glyph:"🌰", hue:"#9a6b2f"},
+    {id:"nuts",  name:"Nuts & Peanuts",     glyph:"🥜", hue:"#b88341"},
+    {id:"tajin", name:"Tajín & Chili-Lime", glyph:"🌶️", hue:"#e5402b"},
+    {id:"candy", name:"Candy & Gummies",    glyph:"🍬", hue:"#d83b7a"},
+    {id:"mix",   name:"Snack Mixes",        glyph:"🥨", hue:"#6f8f1a"},
+    {id:"jerky", name:"Jerky & Meat",       glyph:"🥩", hue:"#7a1538"},
+    {id:"bfy",   name:"Better-for-you",     glyph:"🫐", hue:"#6a4ea3"},
+    {id:"display",name:"Displays",          glyph:"🗄️", hue:"#3c4a52"},
+  ];
+  const hueOf = id => (CATS.find(c=>c.id===id)||CATS[0]).hue;
+  const glyphOf = id => (CATS.find(c=>c.id===id)||CATS[0]).glyph;
+
+  const FORMATS = [
+    {sz:"1.5–2 oz", nm:"Grab-N-Run", oz:"Single-serve checkout bags"},
+    {sz:"~1–4 oz",  nm:"Snack Size", oz:"Everyday impulse size"},
+    {sz:"~2–8 oz",  nm:"Resealable", oz:"Pouches for shelf"},
+    {sz:"~5–8 oz",  nm:"Sharing",    oz:"Gusseted stand-up bags"},
+    {sz:"11–18 oz", nm:"Family",     oz:"Take-home value packs"},
+    {sz:"20–24 oz", nm:"Party",      oz:"Big-bag trail mixes"},
+  ];
+
+  // p = [name, sku, cat, brand, format, size, pack(units/case), srp]
+  const RAW = [
+    // Grab-N-Run (144/case)
+    ["Energizer Trail Mix","1745460","trail","Snak Club","Grab-N-Run","2 oz",144,1.19],
+    ["Fancy Trail Mix","1745456","trail","Snak Club","Grab-N-Run","2 oz",144,1.19],
+    ["Yogurt Trail Mix","1745454","trail","Snak Club","Grab-N-Run","2 oz",144,1.19],
+    ["Honey Roasted Peanuts","1745147","nuts","Snak Club","Grab-N-Run","1.75 oz",144,1.19],
+    ["Hot & Spicy Peanuts","1745149","nuts","Snak Club","Grab-N-Run","2 oz",144,1.19],
+    ["Salted Peanuts","1745146","nuts","Snak Club","Grab-N-Run","2 oz",144,1.19],
+    ["Toffee Peanuts","1745528","nuts","Snak Club","Grab-N-Run","2 oz",144,1.19],
+    ["Tajín Clásico Peanuts","1745640","tajin","Tajín","Grab-N-Run","1.5 oz",144,1.19],
+    ["Tajín Toasted Corn","1745643","tajin","Tajín","Grab-N-Run","1.5 oz",144,1.19],
+    ["Tajín Crunchy Peanuts","1745739","tajin","Tajín","Grab-N-Run","1.4 oz",144,1.19],
+    ["Antiox-C Cinnamon Oat & Yogurt Mix","1745600","bfy","Antiox-C","Grab-N-Run","1.5 oz",48,1.79],
+    ["Antiox-C Dark Choco & Salted Almonds","1745602","bfy","Antiox-C","Grab-N-Run","1.5 oz",48,1.79],
+
+    // Snack Size (12/case)
+    ["Apple Rings","1780586","candy","Snak Club","Snack Size","4 oz",12,1.69],
+    ["Peach Rings","1780589","candy","Snak Club","Snack Size","4 oz",12,1.69],
+    ["Watermelon Rings","1780600","candy","Snak Club","Snack Size","4 oz",12,1.69],
+    ["Gummy Bears","1780539","candy","Snak Club","Snack Size","4 oz",12,1.69],
+    ["Gummy Worms","1780546","candy","Snak Club","Snack Size","4 oz",12,1.69],
+    ["Sour Gummy Bears","1780538","candy","Snak Club","Snack Size","4 oz",12,1.69],
+    ["Sour Worms","1780547","candy","Snak Club","Snack Size","4 oz",12,1.69],
+    ["Cinnamon Bears","1780603","candy","Snak Club","Snack Size","3.75 oz",12,1.69],
+    ["Rainbow Belt Bites","1780601","candy","Snak Club","Snack Size","3 oz",12,1.69],
+    ["Salted Cashews","1780330","nuts","Snak Club","Snack Size","1 oz",12,1.69],
+    ["Salted Peanuts","1780146","nuts","Snak Club","Snack Size","3.5 oz",12,1.69],
+    ["Salted Pistachios","1780110","nuts","Snak Club","Snack Size","1 oz",12,1.69],
+    ["Toffee Peanuts","1780528","nuts","Snak Club","Snack Size","4 oz",12,1.69],
+    ["Tropical Trail Mix","1780462","trail","Snak Club","Snack Size","3.25 oz",12,1.69],
+    ["Energizer Trail Mix","1780460","trail","Snak Club","Snack Size","3.25 oz",12,1.69],
+    ["Fancy Trail Mix","1780456","trail","Snak Club","Snack Size","3.25 oz",12,1.69],
+    ["Yogurt Trail Mix","1780454","trail","Snak Club","Snack Size","3.25 oz",12,1.69],
+    ["Tajín Fiesta Mix","1780644","tajin","Tajín","Snack Size","2.25 oz",12,1.69],
+    ["Tajín Clásico Peanuts","1780640","tajin","Tajín","Snack Size","2.75 oz",12,1.69],
+    ["Tajín Crunchy Peanuts","1780739","tajin","Tajín","Snack Size","2.25 oz",12,1.69],
+    ["Tajín Toasted Corn","1780643","tajin","Tajín","Snack Size","2.5 oz",12,1.69],
+    ["Tajín Mango Rings","1780904","tajin","Tajín","Snack Size","2.25 oz",12,1.69],
+    ["Tajín Apple Rings","1780611","tajin","Tajín","Snack Size","2.5 oz",12,1.69],
+    ["Tajín Peach Rings","1780647","tajin","Tajín","Snack Size","2.5 oz",12,1.69],
+    ["Tajín Watermelon Rings","1780610","tajin","Tajín","Snack Size","2.25 oz",12,1.69],
+
+    // Resealable (6/case)
+    ["Sweet & Salty Trail Mix","1721440","trail","Snak Club","Resealable","5.5 oz",6,3.99],
+    ["Cape Cod Trail Mix","1721155","trail","Snak Club","Resealable","3.5 oz",6,3.99],
+    ["Energizer Trail Mix","1721459","trail","Snak Club","Resealable","6.75 oz",6,3.99],
+    ["Raw Keto Mix","1721740","trail","Snak Club","Resealable","2.25 oz",6,3.99],
+    ["Everything Bagel Cashews","1721173","nuts","Snak Club","Resealable","2.5 oz",6,3.99],
+    ["Maple Bourbon Almonds","1721737","nuts","Snak Club","Resealable","2.5 oz",6,3.99],
+    ["Smoked Almonds","1721139","nuts","Snak Club","Resealable","2.75 oz",6,3.99],
+    ["Hot & Spicy Peanuts","1721149","nuts","Snak Club","Resealable","7.5 oz",6,3.99],
+    ["Banana Chips","1721475","mix","Snak Club","Resealable","5.5 oz",6,3.99],
+    ["Yogurt Pretzels","1721563","candy","Snak Club","Resealable","6 oz",6,3.99],
+    ["Chocolatey Raisins","1721515","candy","Snak Club","Resealable","5 oz",6,3.99],
+    ["Spicy Party Snack Mix","1721464","mix","Snak Club","Resealable","6.75 oz",6,3.99],
+    ["Asian Style Snack Mix","1721466","mix","Snak Club","Resealable","6.75 oz",6,3.99],
+    ["Hidden Valley Ranch Crunch Mix","1721701","mix","Snak Club","Resealable","2.5 oz",6,3.99],
+    ["Hidden Valley Ranch Toasted Corn","1721700","mix","Snak Club","Resealable","3 oz",6,3.99],
+    ["Chili Mango","1721482","tajin","Snak Club","Resealable","4.5 oz",6,3.99],
+    ["Tajín Clásico Peanuts","1721640","tajin","Tajín","Resealable","5 oz",6,3.99],
+    ["Tajín Fiesta Mix","1721644","tajin","Tajín","Resealable","4 oz",6,3.99],
+
+    // Sharing (6/case)
+    ["Antioxidant Trail Mix","1741442","trail","Snak Club","Sharing","8 oz",6,5.09],
+    ["Honey Caribbean Trail Mix","1741436","trail","Snak Club","Sharing","8 oz",6,5.09],
+    ["Raw Almonds","1741238","nuts","Snak Club","Sharing","4 oz",6,5.09],
+    ["Salted Cashews","1741330","nuts","Snak Club","Sharing","4 oz",6,5.09],
+
+    // Family — Candy (6/case)
+    ["Gummy Bears","1764539","candy","Snak Club","Family","16 oz",6,5.69],
+    ["Peach Rings","1764589","candy","Snak Club","Family","16 oz",6,5.69],
+    ["Sour Worms","1764547","candy","Snak Club","Family","16 oz",6,5.69],
+    ["Rainbow Belts","1764601","candy","Snak Club","Family","11 oz",6,5.69],
+    ["Tajín Mango Rings","1764904","tajin","Tajín","Family","11 oz",6,5.69],
+
+    // Family — Mixes (6/case)
+    ["Energizer Trail Mix","1764460","trail","Snak Club","Family","16 oz",6,7.19],
+    ["Tropical Trail Mix","1764462","trail","Snak Club","Family","16 oz",6,7.19],
+    ["Sweet & Salty Trail Mix","1764439","trail","Snak Club","Family","14 oz",6,7.19],
+    ["Tajín Clásico Peanuts","1764640","tajin","Tajín","Family","12 oz",6,7.19],
+
+    // Family — Nut & Mega (6/case)
+    ["Mega Trail Mix","1764434","trail","Snak Club","Family","14 oz",6,14.99],
+    ["Raw Almonds","1764238","nuts","Snak Club","Family","15 oz",6,14.99],
+    ["Salted Cashews","1764132","nuts","Snak Club","Family","11 oz",6,14.99],
+
+    // Party (6/case)
+    ["Energizer Trail Mix","1771459","trail","Snak Club","Party","24 oz",6,8.19],
+    ["Sweet & Salty Trail Mix","1771440","trail","Snak Club","Party","24 oz",6,8.19],
+    ["Tropical Trail Mix","1771465","trail","Snak Club","Party","24 oz",6,8.19],
+
+    // Muncheros (12/case snack, 5/case family)
+    ["Mexican Street Corn Esquite","1504486","tajin","Muncheros","Snack Size","3.25 oz",12,1.59],
+    ["Chili-Lemon Peanuts","1504820","tajin","Muncheros","Snack Size","5 oz",12,1.59],
+    ["Hot & Spicy Peanuts","1504821","tajin","Muncheros","Snack Size","5 oz",12,1.59],
+    ["Mix Botana Chili-Lime","1504839","tajin","Muncheros","Snack Size","4.5 oz",12,1.59],
+    ["Crunchy Peanut","1504483","nuts","Muncheros","Snack Size","4 oz",12,1.59],
+    ["Chili-Lemon Peanuts","1558302","tajin","Muncheros","Family","14 oz",5,4.39],
+    ["Hot & Spicy Peanuts","1558301","tajin","Muncheros","Family","14 oz",5,4.39],
+    ["Chili Mango Fruit","1558304","tajin","Muncheros","Family","7 oz",5,4.39],
+
+    // Tillamook Country Smoker
+    ["Original Beef Stick","051943125039","jerky","Tillamook","Sticks","1.25 oz",192,1.99],
+    ["Jalapeño Meat Sticks","051943144245","jerky","Tillamook","Sticks","1.44 oz",192,1.99],
+    ["Teriyaki Meat Sticks","051943700779","jerky","Tillamook","Sticks","1.44 oz",192,1.99],
+    ["Pepperoni Sticks","051943700809","jerky","Tillamook","Sticks","1.44 oz",192,1.99],
+    ["Spicy Sweet Beef Jerky","051943287072","jerky","Tillamook","Bags","2.5 oz",12,5.99],
+    ["Honey Glazed Beef Jerky","051943287034","jerky","Tillamook","Bags","2.5 oz",12,5.99],
+    ["Old Fashioned Beef Jerky","051943287010","jerky","Tillamook","Bags","2.5 oz",12,5.99],
+    ["Teriyaki Beef Jerky","051943287027","jerky","Tillamook","Bags","2.5 oz",12,5.99],
+
+    // Displays / merchandising (fixtures, 1 each, fixed est. price)
+    ["20-Count Floor Peg Rack","RA10809","display","Snak Club","Fixture","62\"H display",1,0,49],
+    ["20-Peg Basket Accessory","RA10806","display","Snak Club","Fixture","Add-on basket",1,0,14],
+    ["12-Peg Countertop Rack","RA10803","display","Snak Club","Fixture","Counter display",1,0,29],
+  ];
+
+  // Build product objects with computed case price
+  const PRODUCTS = RAW.map((p,i)=>{
+    const [name,sku,cat,brand,format,size,pack,srp,fixedCase]=p;
+    const casePrice = (typeof fixedCase==="number")
+      ? fixedCase
+      : Math.round(pack*srp*WHOLESALE_FACTOR*100)/100;
+    return {id:"p"+i,name,sku,cat,brand,format,size,pack,srp,casePrice};
+  });
+
+  const money = n => "$"+n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+
+  /* ---------- state ---------- */
+  let cart = loadCart();         // { id: qty(cases) }
+  let activeCat = "all";
+  let query = "";
+  let drawerView = "cart";       // 'cart' | 'checkout' | 'confirm'
+  let lastOrderText = "";
+
+  function loadCart(){ try{ return JSON.parse(localStorage.getItem("rdj_cart")||"{}"); }catch(e){ return {}; } }
+  function saveCart(){ try{ localStorage.setItem("rdj_cart", JSON.stringify(cart)); }catch(e){} }
+
+  /* ---------- render: formats ---------- */
+  document.getElementById("fmtRow").innerHTML = FORMATS.map(f=>`
+    <div class="fmt"><div class="sz">${f.sz}</div><div class="nm">${f.nm}</div><div class="oz">${f.oz}</div></div>
+  `).join("");
+
+  /* ---------- render: chips ---------- */
+  function renderChips(){
+    document.getElementById("chips").innerHTML = CATS.map(c=>{
+      const n = c.id==="all" ? PRODUCTS.length : PRODUCTS.filter(p=>p.cat===c.id).length;
+      return `<button class="chip ${activeCat===c.id?'active':''}" data-cat="${c.id}">
+        <span class="cglyph">${c.glyph}</span>${c.name} <span class="tnum" style="opacity:.6">${n}</span></button>`;
+    }).join("");
+    document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{ activeCat=b.dataset.cat; renderChips(); renderGrid(); });
+  }
+
+  /* ---------- render: grid ---------- */
+  function filtered(){
+    const q = query.trim().toLowerCase();
+    return PRODUCTS.filter(p=>{
+      const okCat = activeCat==="all" || p.cat===activeCat;
+      const okQ = !q || (p.name+" "+p.sku+" "+p.brand+" "+p.format).toLowerCase().includes(q);
+      return okCat && okQ;
+    });
+  }
+  function renderGrid(){
+    const list = filtered();
+    const grid = document.getElementById("grid");
+    document.getElementById("countLine").textContent =
+      `${list.length} product${list.length!==1?"s":""}${activeCat!=="all"?" in "+CATS.find(c=>c.id===activeCat).name:""}`;
+    if(!list.length){
+      grid.innerHTML = `<div class="empty-state"><b>No matches</b>Try a different search or category.</div>`;
+      return;
+    }
+    grid.innerHTML = list.map(p=>{
+      const hue = hueOf(p.cat);
+      const inCart = cart[p.id]||0;
+      const isFixture = p.format==="Fixture";
+      return `<div class="card">
+        <div class="tile" style="background:linear-gradient(135deg,${hue},${shade(hue,-22)})">
+          <span class="fmt-badge">${p.format}</span>
+          <span class="glyph">${glyphOf(p.cat)}</span>
+          <span class="brandtag">${p.brand}</span>
+        </div>
+        <div class="card-body">
+          <div class="pname">${p.name}</div>
+          <div class="meta">
+            <span class="m">${p.size}</span>
+            <span class="m">·</span>
+            <span class="m">${isFixture? "1 unit" : p.pack+" / case"}</span>
+            <span class="m">·</span>
+            <span class="m sku">#${p.sku}</span>
+          </div>
+          <div class="price-row">
+            <div class="case tnum">${money(p.casePrice)} <small>/ ${isFixture?"unit":"case"}</small></div>
+            ${isFixture? "" : `<div class="srp">SRP each<br><b class="tnum">${money(p.srp)}</b></div>`}
+          </div>
+          <div class="add-row">
+            <div class="stepper" aria-label="cases">
+              <button data-step="-1" data-id="${p.id}" aria-label="decrease">–</button>
+              <input type="number" min="1" value="${inCart||1}" data-qty="${p.id}" aria-label="cases for ${p.name}">
+              <button data-step="1" data-id="${p.id}" aria-label="increase">+</button>
+            </div>
+            <button class="add-btn ${inCart?'added':''}" data-add="${p.id}">
+              ${inCart?`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>In order (${inCart})`
+                      :`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Add ${isFixture?"":"case"}`}
+            </button>
+          </div>
+        </div>
+      </div>`;
+    }).join("");
+
+    grid.querySelectorAll("[data-step]").forEach(b=>b.onclick=()=>{
+      const inp = grid.querySelector(`[data-qty="${b.dataset.id}"]`);
+      let v = Math.max(1,(parseInt(inp.value)||1)+parseInt(b.dataset.step));
+      inp.value=v;
+    });
+    grid.querySelectorAll("[data-qty]").forEach(inp=>inp.onchange=()=>{ if((parseInt(inp.value)||0)<1) inp.value=1; });
+    grid.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>{
+      const id=b.dataset.add;
+      const qty=Math.max(1,parseInt(grid.querySelector(`[data-qty="${id}"]`).value)||1);
+      cart[id]=qty; saveCart(); syncCount(); renderGrid();
+      const p=PRODUCTS.find(x=>x.id===id);
+      toast(`${qty}× ${p.name} added`);
+    });
+  }
+
+  // darken a hex color by pct (negative = darker)
+  function shade(hex,pct){
+    const n=parseInt(hex.slice(1),16);
+    let r=(n>>16)&255,g=(n>>8)&255,b=n&255;
+    r=Math.round(r*(100+pct)/100);g=Math.round(g*(100+pct)/100);b=Math.round(b*(100+pct)/100);
+    r=Math.max(0,Math.min(255,r));g=Math.max(0,Math.min(255,g));b=Math.max(0,Math.min(255,b));
+    return "#"+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);
+  }
+
+  /* ---------- cart math ---------- */
+  const cartItems = () => Object.keys(cart).map(id=>({p:PRODUCTS.find(x=>x.id===id),q:cart[id]})).filter(x=>x.p&&x.q>0);
+  const subtotal = () => cartItems().reduce((s,{p,q})=>s+p.casePrice*q,0);
+  const totalCases = () => cartItems().reduce((s,{q})=>s+q,0);
+
+  function syncCount(){
+    const c=totalCases();
+    const el=document.getElementById("cartCount");
+    el.textContent=c; el.classList.toggle("show",c>0);
+  }
+
+  /* ---------- drawer ---------- */
+  const scrim=document.getElementById("scrim"), drawer=document.getElementById("drawer");
+  function openDrawer(view){ drawerView=view||"cart"; renderDrawer(); scrim.classList.add("open"); drawer.classList.add("open"); document.body.style.overflow="hidden"; }
+  function closeDrawer(){ scrim.classList.remove("open"); drawer.classList.remove("open"); document.body.style.overflow=""; }
+  document.getElementById("openCart").onclick=()=>openDrawer("cart");
+  document.getElementById("closeCart").onclick=closeDrawer;
+  scrim.onclick=closeDrawer;
+  document.getElementById("footOrder").onclick=(e)=>{e.preventDefault();openDrawer("cart");};
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&drawer.classList.contains("open")) closeDrawer(); });
+
+  function renderDrawer(){
+    const body=document.getElementById("drawerBody");
+    const foot=document.getElementById("drawerFoot");
+    const minBar=document.getElementById("minBar");
+    const title=document.getElementById("drawerTitle");
+    const items=cartItems();
+
+    if(drawerView==="confirm"){
+      title.textContent="Order sent";
+      minBar.innerHTML="";
+      body.innerHTML=`<div class="confirm">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Order request sent</h3>
+        <p>RDJ will confirm stock, final wholesale pricing and delivery. A copy is ready below.</p>
+        <div class="order-box">${lastOrderText.replace(/</g,"&lt;")}</div>
+      </div>`;
+      foot.innerHTML=`
+        <button class="checkout-btn" id="copyOrder" style="background:var(--ink)">Copy order summary</button>
+        <button class="back-link" id="newOrder" style="margin:14px auto 0;display:flex">Start a new order</button>`;
+      document.getElementById("copyOrder").onclick=()=>{ copyText(lastOrderText); toast("Order summary copied"); };
+      document.getElementById("newOrder").onclick=()=>{ cart={};saveCart();syncCount();renderGrid();closeDrawer(); };
+      return;
+    }
+
+    if(!items.length){
+      title.textContent="Your order";
+      minBar.innerHTML="";
+      body.innerHTML=`<div class="cart-empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <b>No cases yet</b>Add products from the catalog to build your wholesale order.</div>`;
+      foot.innerHTML=`<button class="checkout-btn" disabled>Add items to continue</button>`;
+      return;
+    }
+
+    // minimum progress
+    const sub=subtotal();
+    const pct=Math.min(100,Math.round(sub/MIN_ORDER*100));
+    const met=sub>=MIN_ORDER;
+    minBar.innerHTML=`<div class="min-track"><div class="min-fill" style="width:${pct}%"></div></div>
+      <div class="min-msg ${met?'met':''}">${met
+        ? `✓ Minimum met — you're good to send`
+        : `Add <b>${money(MIN_ORDER-sub)}</b> more to reach the ${money(MIN_ORDER)} order minimum`}</div>`;
+
+    if(drawerView==="checkout"){
+      title.textContent="Order details";
+      body.innerHTML=`
+        <button class="back-link" id="backToCart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Back to order</button>
+        <div class="co-field"><label>Business / store name</label><input id="f_biz" placeholder="e.g. Orange Market"></div>
+        <div class="co-row">
+          <div class="co-field"><label>Contact name</label><input id="f_name" placeholder="Your name"></div>
+          <div class="co-field"><label>Phone</label><input id="f_phone" placeholder="(619) 000-0000"></div>
+        </div>
+        <div class="co-field"><label>Email</label><input id="f_email" type="email" placeholder="you@business.com"></div>
+        <div class="co-field"><label>Delivery address</label><input id="f_addr" placeholder="Street, city, ZIP"></div>
+        <div class="co-field"><label>Notes (optional)</label><textarea id="f_notes" placeholder="Preferred delivery day, resale cert #, etc."></textarea></div>
+        <div class="pay-note">Submitting sends an order <b>request</b> — no card needed. RDJ confirms availability and final wholesale pricing, then invoices. Card payment can be added later (see notes).</div>`;
+      document.getElementById("backToCart").onclick=()=>{drawerView="cart";renderDrawer();};
+      foot.innerHTML=`
+        <div class="totals"><span class="tl">Estimated subtotal · ${totalCases()} cases</span><span class="tr tnum">${money(sub)}</span></div>
+        <button class="checkout-btn" id="submitOrder">Send order request</button>`;
+      document.getElementById("submitOrder").onclick=submitOrder;
+      return;
+    }
+
+    // cart view
+    title.textContent="Your order";
+    body.innerHTML=items.map(({p,q})=>{
+      const hue=hueOf(p.cat);
+      return `<div class="line">
+        <div class="lthumb" style="background:linear-gradient(135deg,${hue},${shade(hue,-22)})">${glyphOf(p.cat)}</div>
+        <div class="linfo">
+          <div class="lname">${p.name}</div>
+          <div class="lsub">${p.brand} · ${p.size} · ${p.format==="Fixture"?"unit":p.pack+"/case"} · ${money(p.casePrice)} ${p.format==="Fixture"?"ea":"/case"}</div>
+          <div class="lbottom">
+            <div class="stepper">
+              <button data-cstep="-1" data-id="${p.id}" aria-label="decrease">–</button>
+              <input type="number" min="1" value="${q}" data-cqty="${p.id}" aria-label="cases">
+              <button data-cstep="1" data-id="${p.id}" aria-label="increase">+</button>
+            </div>
+            <div class="lprice tnum">${money(p.casePrice*q)}</div>
+          </div>
+          <button class="remove" data-remove="${p.id}">Remove</button>
+        </div>
+      </div>`;
+    }).join("");
+
+    body.querySelectorAll("[data-cstep]").forEach(b=>b.onclick=()=>{
+      const id=b.dataset.id; cart[id]=Math.max(1,(cart[id]||1)+parseInt(b.dataset.cstep));
+      saveCart();syncCount();renderDrawer();renderGrid();
+    });
+    body.querySelectorAll("[data-cqty]").forEach(inp=>inp.onchange=()=>{
+      const id=inp.dataset.cqty; const v=Math.max(1,parseInt(inp.value)||1);
+      cart[id]=v;saveCart();syncCount();renderDrawer();renderGrid();
+    });
+    body.querySelectorAll("[data-remove]").forEach(b=>b.onclick=()=>{
+      delete cart[b.dataset.remove];saveCart();syncCount();renderDrawer();renderGrid();
+    });
+
+    foot.innerHTML=`
+      <div class="totals"><span class="tl">Estimated subtotal · ${totalCases()} cases</span><span class="tr tnum">${money(sub)}</span></div>
+      <button class="checkout-btn" id="toCheckout" ${met?"":"disabled"}>${met?"Continue to details":`Minimum ${money(MIN_ORDER)} to order`}</button>`;
+    if(met) document.getElementById("toCheckout").onclick=()=>{drawerView="checkout";renderDrawer();};
+  }
+
+  function submitOrder(){
+    const g=id=>(document.getElementById(id)?.value||"").trim();
+    const biz=g("f_biz"), name=g("f_name");
+    if(!biz||!name){ toast("Add business + contact name"); return; }
+    const items=cartItems();
+    const lines=items.map(({p,q})=>
+      `  ${q}× ${p.name} — ${p.size} (${p.format==="Fixture"?"unit":p.pack+"/case"}) · #${p.sku} · ${money(p.casePrice*q)}`
+    ).join("\n");
+    lastOrderText =
+`RDJ DISTRIBUTIONS — WHOLESALE ORDER REQUEST
+
+Business:  ${biz}
+Contact:   ${name}
+Phone:     ${g("f_phone")||"—"}
+Email:     ${g("f_email")||"—"}
+Delivery:  ${g("f_addr")||"—"}
+Notes:     ${g("f_notes")||"—"}
+
+ITEMS (${totalCases()} cases)
+${lines}
+
+Estimated subtotal: ${money(subtotal())}
+(Final wholesale pricing confirmed by RDJ.)`;
+
+    // open the customer's email client addressed to RDJ
+    const subject=encodeURIComponent(`Wholesale order request — ${biz}`);
+    const bodyEnc=encodeURIComponent(lastOrderText);
+    try{ window.location.href=`mailto:${ORDER_EMAIL}?subject=${subject}&body=${bodyEnc}`; }catch(e){}
+
+    drawerView="confirm"; renderDrawer();
+  }
+
+  /* ---------- misc ---------- */
+  let toastT;
+  function toast(msg){
+    const t=document.getElementById("toast");
+    document.getElementById("toastMsg").textContent=msg;
+    t.classList.add("show"); clearTimeout(toastT);
+    toastT=setTimeout(()=>t.classList.remove("show"),2100);
+  }
+  function copyText(txt){
+    if(navigator.clipboard){ navigator.clipboard.writeText(txt).catch(()=>{}); }
+    else{ const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}ta.remove(); }
+  }
+  document.getElementById("search").addEventListener("input",e=>{ query=e.target.value; renderGrid(); });
+  document.getElementById("yr").textContent=new Date().getFullYear();
+
+  /* ---------- init ---------- */
+  renderChips(); renderGrid(); syncCount();
+</script>
+</body>
+</html>
